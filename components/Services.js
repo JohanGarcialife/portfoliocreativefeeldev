@@ -8,8 +8,11 @@ import frame from "../public/Frame.png";
 
 export default function Services() {
   return (
-    <div className="bg-bg3  flex space-x-5  items-center py-20 space-y-10 lg:px-64">
-      <div className="w-1/2 flex flex-col space-y-5">
+    <div
+      className="bg-bg3  lg:flex lg:space-x-5  items-center py-20 space-y-10 px-12 xl:px-64"
+      id="services"
+    >
+      <div className="lg:w-1/2 flex flex-col space-y-5">
         <p className="text-azul font-semibold  text-2xl">Services we offer</p>
         <p className="text-white font-semibold  text-4xl">
           We believe in true collaboration and therefore make our{" "}
@@ -18,7 +21,7 @@ export default function Services() {
           some of them:
         </p>
       </div>
-      <div className="w-1/2 grid grid-cols-2 gap-8 ">
+      <div className="w-full lg:w-1/2 grid grid-cols-2 gap-2 lg:gap-8 ">
         <div className="rounded-lg bg-white cursor-pointer border-t-5 border-azul p-4 space-y-4">
           <Image
             src={iconPark}

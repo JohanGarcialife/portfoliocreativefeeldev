@@ -17,20 +17,18 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { name: "Home", link: "#home" },
+    { name: "About Us", link: "#aboutUs" },
+    { name: "Services", link: "#services" },
+    { name: "Why Choose Us", link: "#whyChooseUs" },
+    { name: "Portfolio", link: "#portfolio" },
+    { name: "Testimonials", link: "#testimonials" },
+    { name: "Contact", link: "#contact" },
   ];
 
   return (
     <Navbar
+      isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       isBlurred={true}
       className="bg-transparent z-50"
@@ -47,23 +45,39 @@ export default function Header() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#home">
             <p className="text-white font-semibold">Home</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link aria-current="page" href="#">
+          <Link aria-current="page" href="#aboutUs">
+            <p className="text-white font-semibold">About us</p>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link aria-current="page" href="#services">
             <p className="text-white font-semibold">Services</p>
           </Link>
         </NavbarItem>
+
         <NavbarItem>
-          <Link aria-current="page" href="#">
-            <p className="text-white font-semibold">Projects</p>
+          <Link color="foreground" href="#whyChooseUs">
+            <p className="text-white font-semibold">Why Choose Us</p>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            <p className="text-white font-semibold">About Us</p>
+          <Link color="foreground" href="#portfolio">
+            <p className="text-white font-semibold">Portfolio</p>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#testimonials">
+            <p className="text-white font-semibold">Testimonials</p>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#contact">
+            <p className="text-white font-semibold">Contact</p>
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -80,7 +94,9 @@ export default function Header() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
+
+      {/* Menu móvil */}
+      <NavbarMenu className="flex-col items-center justify-center space-y-5">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -92,10 +108,11 @@ export default function Header() {
                   ? "danger"
                   : "foreground"
               }
-              href="#"
+              href={item.link}
               size="lg"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {item}
+              <p className="text-azul text-4xl font-bold">{item.name}</p>
             </Link>
           </NavbarMenuItem>
         ))}

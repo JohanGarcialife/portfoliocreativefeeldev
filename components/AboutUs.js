@@ -8,9 +8,12 @@ import company from "../public/estadistica/company.png";
 
 export default function AboutUs() {
   return (
-    <div className="bg-bg2 flex flex-col items-center py-20 space-y-10 lg:px-64">
+    <div
+      className="bg-bg2 flex flex-col items-center py-20 space-y-10 px-12 xl:px-64"
+      id="aboutUs"
+    >
       <div className=" max-w-[780px] ">
-        <p className="text-white font-semibold text-center text-4xl">
+        <p className="text-white font-semibold text-center text-lg lg:text-4xl">
           Founded more than 5 years ago, Creative Feel Dev is one of the fastest
           growing <span className="text-amarillo">web</span> and{" "}
           <span className="text-amarillo">mobile application</span> development
@@ -18,7 +21,7 @@ export default function AboutUs() {
         </p>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center  space-y-10 md:space-x-10">
-        <div className="flex flex-col space-y-5 w-1/2">
+        <div className="flex flex-col space-y-5 md:w-1/2">
           <p className="text-gris">
             At Creative Feel Dev, we are a dedicated team of developers
             specializing in creating cutting-edge web and mobile applications.
@@ -46,11 +49,11 @@ export default function AboutUs() {
             your vision to life!
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <Image src={ai} alt="Logo" width={525} height={300} />
         </div>
       </div>
-      <div className="flex items-center justify-between  w-full">
+      <div className="grid grid-cols-2 gap-4 lg:flex items-center justify-between  w-full">
         <div className="flex flex-col space-y-2 text-center items-center">
           <Image src={projects} alt="Logo" width={90} height={90} />
           <p className="text-white font-semibold text-2xl">Projects</p>

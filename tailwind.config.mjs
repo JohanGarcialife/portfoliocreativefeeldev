@@ -20,7 +20,8 @@ const config = {
         secondary: "#111C44",
         amarillo: "#FFA700",
         gris: "#B6B6B6",
-        gris2: "767676",
+        gris2: "#767676",
+        gris3: "#475569",
         azul: "#2478FE",
       },
       fontFamily: {
