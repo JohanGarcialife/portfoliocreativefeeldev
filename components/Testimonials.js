@@ -8,7 +8,6 @@ import { getTestimonialsApi } from "@/supabase/Supabase";
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState([]);
-  console.log(testimonials);
 
   useEffect(() => {
     (async () => {

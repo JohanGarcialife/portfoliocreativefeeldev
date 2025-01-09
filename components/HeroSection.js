@@ -7,7 +7,6 @@ import Rectangle56 from "../public/bg/Rectangle56.png";
 import Rectangle59 from "../public/bg/Rectangle59.png";
 import Rectangle60 from "../public/bg/Rectangle60.png";
 import { Avatar, Button, Chip } from "@nextui-org/react";
-
 import { getTechnologiesApi } from "@/supabase/Supabase";
 import useWindowSize from "@/hooks/useWindowSize";
 

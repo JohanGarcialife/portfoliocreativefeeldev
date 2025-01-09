@@ -5,20 +5,8 @@ import emailjs from "@emailjs/browser";
 import { Form, Input, Button, Textarea } from "@nextui-org/react";
 
 export default function Contact() {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.current);
-  };
-
   const sendEmail = (e) => {
     e.preventDefault();
-    const schema = {
-      name: e.target.name,
-      company: e.target.company,
-      email: e.target.email,
-      message: e.target.message,
-    };
-    console.log(Form.current);
 
     emailjs
       .sendForm("service_cltzy1a", "template_p8sj3lh", e.target, {
