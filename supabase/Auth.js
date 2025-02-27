@@ -11,16 +11,18 @@ export async function signUpApi(name, email, password) {
     email: email,
     password: password,
   });
+
   const response = data.data;
 
   return response;
-}
+} 
 
 export async function signInApi(email, password) {
   const data = await supabase.auth.signInWithPassword({
     email: email,
     password: password,
   });
+
   const response = data.data;
   return response;
 }
@@ -29,7 +31,6 @@ export async function oAuthGoogleApi() {
   const data = await supabase.auth.signInWithOAuth({
     provider: "google",
   });
-
   const response = data.data;
   return response;
 }

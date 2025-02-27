@@ -20,11 +20,16 @@ import Logo from "../public/Logo.png";
 import Image from "next/image";
 import SignUp from "./Auth/SignUp";
 import SignIn from "./Auth/SignIn";
+import useAuth from "@/hooks/useAuth";
+
+
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [modalForm, setModalForm] = useState(null);
+  const { auth, logout } = useAuth();
 
   const menuItems = [
     { name: "Home", link: "#home" },
@@ -102,6 +107,14 @@ export default function Header() {
           </NavbarItem>
         </NavbarContent>
 
+        {auth? <NavbarContent justify="end">
+          <NavbarItem className="hidden lg:flex">
+            <Button color="primary" variant="light" onPress={logout}>
+              <p className="text-white font-semibold ">Log out</p>
+            </Button>
+          </NavbarItem>
+        </NavbarContent> : 
+        
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
             <Button color="primary" variant="light" onPress={openModalSignIn}>
@@ -114,6 +127,9 @@ export default function Header() {
             </Button>
           </NavbarItem>
         </NavbarContent>
+        
+        }
+
 
         {/* Menu móvil */}
         <NavbarMenu className="flex-col items-center justify-center space-y-5">

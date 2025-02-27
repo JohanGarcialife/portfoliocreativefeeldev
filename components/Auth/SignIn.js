@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form, Input, Link } from "@nextui-org/react";
 import { oAuthGoogleApi, signInApi } from "@/supabase/Auth";
 import { FcGoogle } from "react-icons/fc";
+import useAuth from "@/hooks/useAuth";
+
 
 export default function SignIn(props) {
   const { onClose, setModalForm } = props;
+  const { auth, login } = useAuth();
 
-  const signIn = (e) => {
+
+  const signIn = async (e) => {
     e.preventDefault();
 
     const email = e.target.Email.value;
     const password = e.target.Password.value;
-
-    signInApi(email, password);
+    const response = await signInApi(email, password);
+    login(response.session?.access_token)
+    
   };
 
-  const oAuthGoogle = () => {
-    oAuthGoogleApi();
+ 
+const oAuthGoogle = async () => {
+  const response = await  oAuthGoogleApi();
   };
+
+  
 
   return (
     <Form
@@ -60,7 +68,7 @@ export default function SignIn(props) {
         <Button
           color="solid"
           variant="flat"
-          onPress={oAuthGoogleApi}
+          onPress={oAuthGoogle}
           className="bg-white text-black font-bold  flex items-center"
           startContent={<FcGoogle className="text-xl" />}
         >
