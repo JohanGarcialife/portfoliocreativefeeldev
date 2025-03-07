@@ -5,4 +5,4 @@ const AuthContext = createContext({
   logout: () => null,
   SetReloadUser: () => null,
 });
-export default AuthContext;
+export default AuthContext; 
