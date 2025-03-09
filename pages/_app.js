@@ -2,7 +2,7 @@ import react, { useMemo, useState, useEffect } from "react";
 import "@/styles/globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { Nunito } from "next/font/google";
-import AuthContext from "@/context/authContext";
+import AuthContext from "../context/AuthContext";
 import {
   setToken,
   getToken,
