@@ -78,7 +78,7 @@ export default function Contact() {
                 return value === "admin" ? "Nice try!" : null;
               }}
               classNames={{
-                label: " font-bold",
+                label: "font-bold",
               }}
             />
             <Input
